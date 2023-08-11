@@ -3,7 +3,7 @@ import '.././globals.css'
 import { Inter } from 'next/font/google'
 import "@fortawesome/fontawesome-svg-core/styles.css"
 import { config } from "@fortawesome/fontawesome-svg-core";
-import { WetherProvider } from '../WetherProvider';
+import Navbar from '@/components/Navbar';
 
 config.autoAddCss = false;
 const inter = Inter({ subsets: ['latin'] })
@@ -13,23 +13,19 @@ export const metadata = {
   description: 'Whether Information App',
 }
 
-export default function RootLayout({ children,searchParams }) {
-
-  console.log('search pararms',searchParams)
+export default function RootLayout({ children }) {
   return (
     <html lang="en">
 
-      <body suppressHydrationWarning={true}>
-        <WetherProvider>
-          <ThemesProvider>
-            <div className={`${inter.className} bg-stone-50 dark:bg-stone-950`} style={{ minHeight: '100vh' }}>
-              <div className='p-5'>
-
-                {children}
-              </div>
-            </div>
-          </ThemesProvider>
-        </WetherProvider>
+      <body >
+        <ThemesProvider>
+        <div className={`${inter.className} bg-stone-50 dark:bg-stone-950`} style={{ minHeight: '100vh' }}>
+          <div className='p-1 md:p-5'>
+            <Navbar />
+            {children}
+          </div>
+        </div>
+        </ThemesProvider>
       </body>
     </html >
   )

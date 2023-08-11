@@ -1,23 +1,33 @@
+'use client'
+
 import { getUserData } from "../serverAction/User"
-import Navbar from "@/components/Navbar"
 import WeekWether from "@/components/Wether/WeekWether"
 import RainDetail from "@/components/Wether/RainDetail"
 import GlobalMap from "@/components/Wether/GlobalMap"
 import CitiesWether from "@/components/Wether/CitiesWether"
+import { useEffect, useState } from "react"
 
 
-const Homepage = async () => {
-    const { wetherDetails } = await getUserData()
+const Homepage = () => {
+    const [wetherDetails, setWetherDetailst] = useState(undefined)
+
+
+    const getWetherHandler = async () => {
+        const { wetherDetails: data } = await getUserData()
+        setWetherDetailst(data)
+    }
+    useEffect( () => {
+        getWetherHandler()
+    }, [])
 
     return (
         <div>
-            <Navbar />
-            <div className="flex justify-between gap-16 mt-10">
+            <div className="flex flex-col xl:flex-row justify-between gap-16 mt-10">
                 <WeekWether wetherDetails={wetherDetails} />
                 <RainDetail wetherDetails={wetherDetails} />
             </div>
 
-            <div className="relative flex my-10">
+            <div className="relative flex flex-col xl:flex-row  my-10 ">
                 <GlobalMap />
                 <CitiesWether />
             </div>

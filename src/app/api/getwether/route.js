@@ -20,10 +20,10 @@ export async function GET(req, res) {
             }
         })
 
+
         // return NextResponse.json({ wetherDetails: data })
         return NextResponse.json({ wetherDetails: { location: data.location,currentData:data.timelines.daily.slice(0,1), featureData: data.timelines.daily.slice(1), timesteps: '1d' } })
     } catch (error) {
-        // console.log(error)
         return NextResponse.json({ test: false, error: error.message })
     }
 }

@@ -3,6 +3,11 @@
 @tailwind utilities;
 
 
+body {
+  /* width: 100vw; */
+  /* overflow: hidden; */
+}
+
 .wetherlist {
   scrollbar-width: 10px;
   scrollbar-color: purple transparent;
