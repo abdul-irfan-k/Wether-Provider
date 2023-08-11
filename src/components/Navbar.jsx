@@ -11,11 +11,11 @@ const Navbar = () => {
             <Link href='/'>  <div className="flex rounded-full bg-slate-200 dark:bg-stone-800 items-center justify-center w-14 aspect-square" >
                 <FontAwesomeIcon icon={faBorderAll} className='text-xl' />
             </div></Link>
-            <div className="flex rounded-full bg-slate-200 dark:bg-stone-800 items-center justify-center  w-14 aspect-square ml-5" >
+            <div className="hidden md:flex rounded-full bg-slate-200 dark:bg-stone-800 items-center justify-center  w-14 aspect-square ml-5" >
                 <FontAwesomeIcon icon={faBell} className='text-xl' />
             </div>
 
-            <div className="flex ml-5 items-center">
+            <div className="hidden  md:flex  ml-5 items-center">
                 <span className='text-slate-950 dark:text-white'>
                     <FontAwesomeIcon icon={faLocationDot} className='text-sm' /> Mangalore,
                 </span>
@@ -25,11 +25,11 @@ const Navbar = () => {
             <SearchPlace />
 
             <div className='flex items-center gap-3'>
-                <div>
+                <div className='hidden  md:block'>
                     <FontAwesomeIcon icon={faGear} className='text-xl' />
                 </div>
                 <ThemeSwitch />
-                <div className='flex rounded-full bg-orange-200 items-center justify-center w-14 aspect-square'>
+                <div className='flex  w-12 md:w-14 rounded-full bg-orange-200 items-center justify-center aspect-square'>
                     <FontAwesomeIcon icon={faUser} className='text-2xl text-slate-950' />
                 </div>
 

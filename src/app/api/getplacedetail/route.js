@@ -2,11 +2,8 @@ import axios from "axios";
 import { NextResponse } from "next/server";
 
 export async function POST(req, res) {
-    console.log('reqest =============')
     const request = await req.json()
-    console.log('request ',request)
     const { placeName } = request
-    console.log('placename ',placeName)
 
     const { data } = await axios.get('https://trueway-places.p.rapidapi.com/FindPlaceByText', {
         params: {

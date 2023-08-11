@@ -11,7 +11,6 @@ export const getPlaceWether = async (place, lat, lng) => {
         place: 'uppinangady',
         lat, lng
     })
-console.log("data",data)
     return { wetherDetails: data.wetherDetails }
 }
 

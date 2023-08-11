@@ -6,8 +6,8 @@ import { useTheme } from 'next-themes'
 const ThemeSwitch = () => {
     const { resolvedTheme, setTheme } = useTheme()
     return (
-        <div className='flex rounded-full bg-sky-200 items-center justify-center w-14 aspect-square' onClick={() => setTheme(resolvedTheme == 'dark' ? 'light' : 'dark')}>
-            <FontAwesomeIcon icon={faMoon} className='text-2xl text-slate-950' />
+        <div className='flex w-12 md:w-14 rounded-full bg-sky-200 items-center justify-center  aspect-square' onClick={() => setTheme(resolvedTheme == 'dark' ? 'light' : 'dark')}>
+            <FontAwesomeIcon icon={faMoon} className='text-xl md:text-2xl text-slate-950' />
         </div>
     )
 }

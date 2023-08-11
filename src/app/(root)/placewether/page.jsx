@@ -12,7 +12,6 @@ const PlaceWetherPage = async ({ searchParams }) => {
 
     // const getWetherHandler = async () => {
     //     const { wetherDetails: data } = await getPlaceWether(place, lat, lng)
-    //     console.log('data', data)
 
     //     setWetherDetails(data)
     // }

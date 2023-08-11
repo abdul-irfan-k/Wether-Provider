@@ -4,9 +4,7 @@ const WeekWether = ({ wetherDetails }) => {
     const weekday = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
     const week = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Satuarday"]
 
-    const a = ['', '', '', '', '']
-    console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa ')
-
+  
     return (
         <div className=" xl:w-3/4">
             <div className="flex items-center  text-sm md:text-base">
@@ -50,7 +48,7 @@ const WeekWether = ({ wetherDetails }) => {
 
                 {wetherDetails?.featureData?.map((elm, index) => {
                     return (
-                        <div key={index} className="flex py-1 text-lg md:flex-col md:py-3 md:text-2xl justify-between items-center px-5  rounded-3xl bg-slate-200 dark:bg-stone-800 text-neutral-950 dark:text-stone-50">
+                        <div key={index} className="flex py-1 text-lg px-5 md:max-lg:px-2 md:flex-col md:py-3 md:text-2xl justify-between items-center   rounded-3xl bg-slate-200 dark:bg-stone-800 text-neutral-950 dark:text-stone-50">
                             <span className=" text-center">{weekday[new Date(elm.time).getDay()]}</span>
                             <div className="w-16 aspect-square">
                                 <img src="Asset/cloud.png" alt="" className="w-100" />

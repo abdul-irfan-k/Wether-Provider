@@ -5,7 +5,6 @@ import axios from 'axios'
 export async function POST(req, res) {
     try {
 
-        console.log("started===============================")
         const { isError, error, dbCreated } = await connectDB()
         if (isError) return new Error(error)
 
@@ -25,7 +24,6 @@ export async function POST(req, res) {
                     'X-RapidAPI-Host': 'opentripmap-places-v1.p.rapidapi.com'
                 }
             })
-            console.log('called place wether ')
         }
 
 
@@ -45,12 +43,10 @@ export async function POST(req, res) {
             }
         })
 
-        console.log('==================================================')
 
         // return NextResponse.json({ placeName, wetherDetails: data })
         return NextResponse.json({ wetherDetails: { location: data.location,currentData:data.timelines.daily.slice(0,1), featureData: data.timelines.daily.slice(1), timesteps: '1d' } })
     } catch (error) {
-        // console.log(error)
         return NextResponse.json({ test: false, error: error.message })
     }
 }

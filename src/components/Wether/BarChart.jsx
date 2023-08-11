@@ -8,7 +8,6 @@ const BarChart = () => {
     const [barThickness, setBarThickness] = useState(0)
 
     useEffect(() => {
-        console.log('useref', barThickness)
         const observer = new ResizeObserver(entries => {
             setBarThickness(entries[0].contentRect.width)
         })

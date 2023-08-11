@@ -1,7 +1,6 @@
 const CitiesWether = () => {
     const a = ['', '', '', '', '']
     
-    console.log('testtt')
     return (
         <div className="absolute w-full top-full pb-2 xl:pb-0 xl:h-full xl:top-0 xl:right-0 xl:pl-6  xl:w-1/4 flex flex-col  overflow-y-hidden  ">
             <div className="flex justify-between py-2 items-center">
